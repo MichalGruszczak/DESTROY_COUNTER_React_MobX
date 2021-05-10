@@ -15,7 +15,7 @@ const Navbar = () => {
     <div className="navbar">
       {navItems.map((item) => {
         return (
-          <NavLink className="navbar__navItem" to={item.to}>
+          <NavLink key={item.text} className="navbar__navItem" to={item.to}>
             {item.text}
           </NavLink>
         );
