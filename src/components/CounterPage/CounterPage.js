@@ -6,18 +6,6 @@ import { useCounterStore } from "../../store/counterStore";
 const CounterPage = observer(() => {
   const counterStore = useCounterStore();
 
-  // check for localStorage exist
-  if (
-    !localStorage.getItem("totalPoints") &&
-    !localStorage.getItem("rankTarget")
-  ) {
-    localStorage.setItem("rank", 1);
-    localStorage.setItem("totalPoints", 0);
-    localStorage.setItem("currentPoints", 0);
-    localStorage.setItem("perSecond", 0);
-    localStorage.setItem("rankTarget", 10);
-  } else console.log("localStorage exist");
-
   // update rank
   useEffect(() => {
     counterStore.updateRankByTotalPoints();
@@ -34,9 +22,6 @@ const CounterPage = observer(() => {
         heavy bomber
       </button>
       <button onClick={counterStore.resetAll}>RESET</button>
-      <button onClick={counterStore.clickGeneralStartInterval}>
-        GENERAL!!!
-      </button>
     </div>
   );
 });

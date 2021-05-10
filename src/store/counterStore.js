@@ -2,13 +2,14 @@ import { makeAutoObservable } from "mobx";
 import { createContext, useContext } from "react";
 
 class CounterStore {
-  rank = 1;
+  rank = JSON.parse(localStorage.getItem("rank"));
   // total points for rank and achievements
-  totalPoints = 0;
+  totalPoints = JSON.parse(localStorage.getItem("totalPoints"));
   // curent points for shop
-  currentPoints = 0;
-  perSecond = 0;
-  rankTarget = 10;
+  currentPoints = JSON.parse(localStorage.getItem("currentPoints"));
+  perSecond = JSON.parse(localStorage.getItem("perSecond"));
+  rankTarget = JSON.parse(localStorage.getItem("rankTarget"));
+  interval = "";
 
   constructor() {
     makeAutoObservable(this);
@@ -18,6 +19,15 @@ class CounterStore {
   pointClick = () => {
     this.totalPoints++;
     this.currentPoints++;
+    localStorage.setItem("totalPoints", this.totalPoints);
+    localStorage.setItem("currentPoints", this.currentPoints);
+    console.log(
+      this.rank,
+      this.totalPoints,
+      this.currentPoints,
+      this.perSecond,
+      this.rankTarget
+    );
   };
 
   // add per second - value param. from destroy machine
@@ -25,16 +35,18 @@ class CounterStore {
     const perSecondCopy = this.perSecond;
     const newPerSecond = perSecondCopy + value;
     this.perSecond = newPerSecond;
+    localStorage.setItem("perSecond", Number(this.perSecond));
   };
 
   // check General - start setInterval
-  clickGeneralStartInterval = () => {
-    this.perSecond += 1;
-    const interval = setInterval(() => {
+  startInterval = () => {
+    clearInterval(this.interval);
+    this.interval = setInterval(() => {
       this.totalPoints += this.perSecond;
       this.currentPoints += this.perSecond;
+      localStorage.setItem("totalPoints", Number(this.totalPoints));
+      localStorage.setItem("currentPoints", Number(this.currentPoints));
     }, 1000);
-    if (this.perSecond === 0) clearInterval(interval);
   };
 
   // update rank
@@ -42,12 +54,16 @@ class CounterStore {
     if (this.totalPoints === 10) {
       this.rank++;
       this.rankTarget = this.rankTarget * 2;
+      localStorage.setItem("rank", Number(this.rank));
+      localStorage.setItem("rankTarget", Number(this.rankTarget));
     } else if (
       this.totalPoints > this.rankTarget / 2 &&
       this.totalPoints >= this.rankTarget
     ) {
       this.rank++;
       this.rankTarget = this.rankTarget * 2;
+      localStorage.setItem("rank", Number(this.rank));
+      localStorage.setItem("rankTarget", Number(this.rankTarget));
     }
   };
 
@@ -58,6 +74,13 @@ class CounterStore {
     this.currentPoints = 0;
     this.perSecond = 0;
     this.rankTarget = 10;
+    clearInterval(this.interval);
+    localStorage.setItem("rank", Number(this.rank));
+    localStorage.setItem("totalPoints", Number(this.totalPoints));
+    localStorage.setItem("currentPoints", Number(this.currentPoints));
+    localStorage.setItem("perSecond", Number(this.perSecond));
+    localStorage.setItem("rankTarget", Number(this.rankTarget));
+    this.startInterval();
   };
 }
 
