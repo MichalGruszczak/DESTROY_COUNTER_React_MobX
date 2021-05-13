@@ -12,9 +12,6 @@ import Notification from "./components/Notification/Notification";
 const CounterPage = React.lazy(() =>
   import("./components/CounterPage/CounterPage")
 );
-const SuppliesPage = React.lazy(() =>
-  import("./components/SuppliesPage/SuppliesPage")
-);
 const AchievementsPage = React.lazy(() =>
   import("./components/AchievementsPage/AchievementsPage")
 );
@@ -23,7 +20,6 @@ const ShopPage = React.lazy(() => import("./components/ShopPage/ShopPage"));
 // routes array to map
 const routes = [
   { path: "/counter", component: CounterPage, exact: true },
-  { path: "/supplies", component: SuppliesPage, exact: false },
   { path: "/achievements", component: AchievementsPage, exact: false },
   { path: "/shop", component: ShopPage, exact: false }
 ];
