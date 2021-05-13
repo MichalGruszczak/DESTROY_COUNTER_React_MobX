@@ -1,0 +1,20 @@
+.addButton {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid black;
+  transition: .1s linear;
+  margin: 0 auto;
+  background-image: url('https://i.ibb.co/JpD5qcC/button.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &:hover {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

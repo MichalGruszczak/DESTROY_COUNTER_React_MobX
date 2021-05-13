@@ -16,6 +16,7 @@ const AchievementsPage = observer(() => {
             key={item.name}
             name={item.name}
             required={item.required}
+            url={item.url}
             achieved={counterStore.totalPoints >= item.required ? true : false}
           />
         );

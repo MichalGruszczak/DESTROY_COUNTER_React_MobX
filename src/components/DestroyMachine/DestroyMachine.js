@@ -20,7 +20,12 @@ const DestroyMachine = (props) => {
       disabled={props.disabled}
     >
       <div className="destroyMachine__name">{props.name}</div>
-      <div className="destroyMachine__photo">hello</div>
+      <div
+        className="destroyMachine__photo"
+        style={{
+          backgroundImage: `url(${props.url})`
+        }}
+      ></div>
       <div className="destroyMachine__price">{props.price}</div>
       <div className="destroyMachine__value">{props.value}</div>
     </button>
