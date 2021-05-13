@@ -1,0 +1,40 @@
+.achievementCard {
+  width: 90%;
+  height: 50px;
+  background-color: lightgrey;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  margin: 0 auto;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "photo title"
+    "photo point";
+
+    .achievementCard__photo {
+      width: 100%;
+      height: 100%;
+      grid-area: photo;
+      background-color: blue;
+    }
+
+    .achievementCard__name {
+      grid-area: title;
+      background-color: orange;
+    }
+
+    .achievementCard__required {
+      grid-area: points;
+      background-color: pink;
+    }
+
+   
+  
+}
+
+.achievementCard--locked {
+  // filter: blur(10px);
+  filter: brightness(0.1) blur(5px);
+}

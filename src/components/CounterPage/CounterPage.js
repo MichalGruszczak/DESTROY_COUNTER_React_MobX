@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./counterPage.scss";
 import { observer } from "mobx-react";
 import { useCounterStore } from "../../store/counterStore";
@@ -6,14 +6,11 @@ import { useCounterStore } from "../../store/counterStore";
 const CounterPage = observer(() => {
   const counterStore = useCounterStore();
 
-  // update rank
-  useEffect(() => {
-    counterStore.updateRankByTotalPoints();
-  }, [counterStore, counterStore.totalPoints]);
-
   return (
     <div className="counterPage">
       <h1>rank: {counterStore.rank}</h1>
+      <h2>ach rank: {counterStore.achievementRank} </h2>
+      <h2>ach. rank target: {counterStore.achievementRankTarget}</h2>
       <h1>total points: {counterStore.totalPoints}</h1>
       <h1>current points: {counterStore.currentPoints}</h1>
       <h1>per second: {counterStore.perSecond}</h1>
