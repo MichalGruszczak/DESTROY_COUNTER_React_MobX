@@ -6,6 +6,8 @@
 
 .App {
   font-family: sans-serif;
+  max-width: 1024px;
   min-height: 100vh;
   background-color: #d3d2cd;
+  margin: 0 auto;
 }
