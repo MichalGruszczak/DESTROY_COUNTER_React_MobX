@@ -1,5 +1,5 @@
 .shopPage {
   width: 100%;
-  height: calc(100vh - 60px);
-  background-color: lightslategrey;
+  min-height: calc(100vh - 60px);
+  margin-bottom: 30px;
 }

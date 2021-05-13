@@ -4,8 +4,7 @@ import { NavLink } from "react-router-dom";
 
 // navItems list
 const navItems = [
-  { to: "/counter", text: "Counter" },
-  { to: "/supplies", text: "Supplies" },
+  { to: "/", text: "Counter" },
   { to: "/achievements", text: "Achievements" },
   { to: "/shop", text: "Shop" }
 ];

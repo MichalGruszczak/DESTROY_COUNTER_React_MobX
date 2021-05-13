@@ -21,11 +21,15 @@
     }
 
     .achievementCard__name {
+      width: 100%;
+      height: 100%;
       grid-area: title;
       background-color: orange;
     }
 
     .achievementCard__required {
+      width: 100%;
+      height: 100%;
       grid-area: points;
       background-color: pink;
     }

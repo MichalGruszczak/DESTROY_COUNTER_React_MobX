@@ -70,11 +70,15 @@ class CounterStore {
   };
 
   // add per second - value param. from destroy machine
-  addPerSecond = (value) => {
+  addPerSecond = (value, price) => {
     const perSecondCopy = this.perSecond;
     const newPerSecond = perSecondCopy + value;
     this.perSecond = newPerSecond;
     localStorage.setItem("perSecond", Number(this.perSecond));
+    const currentPointsCopy = this.currentPoints;
+    const newCurrentPoints = currentPointsCopy - price;
+    this.currentPoints = newCurrentPoints;
+    localStorage.setItem("currentPoints", Number(this.currentPoints));
   };
 
   // check General - start setInterval

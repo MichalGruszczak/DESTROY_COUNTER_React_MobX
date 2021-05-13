@@ -19,7 +19,7 @@ const ShopPage = React.lazy(() => import("./components/ShopPage/ShopPage"));
 
 // routes array to map
 const routes = [
-  { path: "/counter", component: CounterPage, exact: true },
+  { path: "/", component: CounterPage, exact: true },
   { path: "/achievements", component: AchievementsPage, exact: false },
   { path: "/shop", component: ShopPage, exact: false }
 ];

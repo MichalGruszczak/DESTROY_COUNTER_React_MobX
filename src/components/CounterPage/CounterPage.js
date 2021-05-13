@@ -15,7 +15,7 @@ const CounterPage = observer(() => {
       <h1>current points: {counterStore.currentPoints}</h1>
       <h1>per second: {counterStore.perSecond}</h1>
       <button onClick={counterStore.pointClick}>add point</button>
-      <button onClick={() => counterStore.addPerSecond(10)}>
+      <button onClick={() => counterStore.addPerSecond(10, 9)}>
         heavy bomber
       </button>
       <button onClick={counterStore.resetAll}>RESET</button>
