@@ -26,8 +26,8 @@ const DestroyMachine = (props) => {
           backgroundImage: `url(${props.url})`
         }}
       ></div>
-      <div className="destroyMachine__price">{props.price}</div>
-      <div className="destroyMachine__value">{props.value}</div>
+      <div className="destroyMachine__price">Price: {props.price}</div>
+      <div className="destroyMachine__value">Per Second: {props.value}</div>
     </button>
   );
 };

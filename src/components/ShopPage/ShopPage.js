@@ -83,7 +83,9 @@ const ShopPage = observer(() => {
 
   return (
     <div className="shopPage">
-      <h3>Per second : {counterStore.perSecond}</h3>
+      <h3 className="shopPage__perSecond">
+        Per second : {counterStore.perSecond}
+      </h3>
       {machines.map((item) => {
         return (
           <DestroyMachine

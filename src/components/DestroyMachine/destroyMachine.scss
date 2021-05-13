@@ -4,12 +4,16 @@
   margin: 0 auto;
   margin-top: 10px;
   cursor: pointer;
+  font-weight: bold;
+  background-color: #91967F;
+  border: none;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "name name"
+    "photo name"
     "photo price"
     "photo value";
 
@@ -17,39 +21,53 @@
       grid-area: name;
       width: 100%;
       height: 100%;
-      background-color: gray;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
     }
 
     .destroyMachine__photo {
       grid-area: photo;
       width: 100%;
       height: 100%;
-      background-color: blue;
-      background-size: contain;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
     .destroyMachine__price {
       grid-area: price;
+      font-size: 16px;
       width: 100%;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .destroyMachine__value {
       grid-area: value;
+      font-size: 16px;
       width: 100%;
       height: 100%;
-      background-color: orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
     }
 
   }
 
-// .destroyMachine--nonvisible {
-//   filter: brightness(0);
-//   cursor: default;
-// }
+.destroyMachine--nonvisible {
+  filter: brightness(0);
+  cursor: default;
+}
 
 .destroyMachine--disabled {
   filter: grayscale(1);
   cursor: default;
+
+  .destroyMachine__price {
+    color: red;
+  }
 }

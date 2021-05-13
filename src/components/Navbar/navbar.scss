@@ -1,12 +1,13 @@
 .navbar {
   width: 100%;
   height: 60px;
-  background-color: lightgreen;
+  background-color: #BAB79F;
   display: flex;
-  flex-wrap: wrap;
+  
 
   .navbar__navItem {
-    flex-basis: 50%;
+    flex-basis: 33.333%;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +17,8 @@
     transition: .1s linear;
 
     &:hover {
-      background-color: yellow;
+      background-color: #7C887E;
+      color: #D3D2CD;
     }
   }
 }

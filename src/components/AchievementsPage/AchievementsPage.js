@@ -10,6 +10,9 @@ const AchievementsPage = observer(() => {
 
   return (
     <div className="achievementsPage">
+      <h2 className="achievementsPage__totalPoints">
+        Total DP's: {counterStore.totalPoints}
+      </h2>
       {availableAchievements.map((item) => {
         return (
           <AchievementCard
@@ -21,7 +24,12 @@ const AchievementsPage = observer(() => {
           />
         );
       })}
-      <button onClick={counterStore.resetAll}>RESET ALL</button>
+      <button
+        className="achievementsPage__reset"
+        onClick={counterStore.resetAll}
+      >
+        RESET ALL
+      </button>
     </div>
   );
 });

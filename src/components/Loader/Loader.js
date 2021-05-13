@@ -5,7 +5,7 @@ import { CircularProgress } from "@material-ui/core";
 const Loader = () => {
   return (
     <div className="loader">
-      <CircularProgress />
+      <CircularProgress color=" #7C887E" />
     </div>
   );
 };

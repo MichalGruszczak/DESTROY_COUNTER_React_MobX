@@ -8,9 +8,13 @@ const CounterDisplay = observer(() => {
 
   return (
     <div className="counterDisplay">
-      <h2>Rank: {counterStore.rank}</h2>
-      <h2>Destroy Points: {counterStore.currentPoints}</h2>
-      <h4>Per second: {counterStore.perSecond}</h4>
+      <h2 className="counterDisplay__rank">Rank: {counterStore.rank}</h2>
+      <h2 className="counterDisplay__points">
+        Destroy Points: {counterStore.currentPoints}
+      </h2>
+      <h4 className="counterDisplay__perSecond">
+        Per second: {counterStore.perSecond}
+      </h4>
     </div>
   );
 });

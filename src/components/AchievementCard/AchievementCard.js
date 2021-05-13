@@ -17,7 +17,7 @@ const AchievementCard = (props) => {
         {props.photo}
       </div>
       <div className="achievementCard__name">{props.name}</div>
-      <div className="achievementCard__required">{props.required}</div>
+      <div className="achievementCard__required">{props.required} DP's</div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 .counterPage {
   width: 100%;
   height: calc(100vh - 60px);
-  background-color: lightcoral;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
