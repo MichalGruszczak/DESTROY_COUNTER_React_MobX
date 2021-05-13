@@ -7,61 +7,61 @@ import { useCounterStore } from "../../store/counterStore";
 // array of destroy machines
 const machines = [
   {
-    name: "smallGun",
+    name: "Small Gun",
     price: 100,
     value: 1,
     requiredRank: 1
   },
   {
-    name: "bigGun",
+    name: "Big Gun",
     price: 500,
     value: 5,
     requiredRank: 1
   },
   {
-    name: "bazooka",
+    name: "Bazooka",
     price: 1000,
     value: 10,
     requiredRank: 2
   },
   {
-    name: "tank",
+    name: "Tank",
     price: 5000,
     value: 50,
     requiredRank: 5
   },
   {
-    name: "artillery",
+    name: "Artillery",
     price: 25000,
     value: 150,
     requiredRank: 8
   },
   {
-    name: "heavyBomber",
+    name: "Heavy Bomber",
     price: 100000,
     value: 500,
     requiredRank: 10
   },
   {
-    name: "destroyer",
+    name: "Star Destroyer",
     price: 300000,
     value: 1000,
     requiredRank: 12
   },
   {
-    name: "nuke",
+    name: "Atomic Bomb",
     price: 600000,
     value: 3000,
     requiredRank: 15
   },
   {
-    name: "deathStar",
+    name: "Death Star",
     price: 1200000,
     value: 8000,
     requiredRank: 20
   },
   {
-    name: "blackHole",
+    name: "Black Hole",
     price: 2500000,
     value: 15000,
     requiredRank: 25
@@ -73,7 +73,7 @@ const ShopPage = observer(() => {
 
   return (
     <div className="shopPage">
-      <h3>Actual : {counterStore.perSecond}</h3>
+      <h3>Per second : {counterStore.perSecond}</h3>
       {machines.map((item) => {
         return (
           <DestroyMachine

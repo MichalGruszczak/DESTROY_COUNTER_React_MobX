@@ -20,6 +20,7 @@ const AchievementsPage = observer(() => {
           />
         );
       })}
+      <button onClick={counterStore.resetAll}>RESET ALL</button>
     </div>
   );
 });
