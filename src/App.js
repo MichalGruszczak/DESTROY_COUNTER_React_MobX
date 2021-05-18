@@ -27,17 +27,6 @@ const routes = [
 const App = observer(() => {
   const counterStore = useCounterStore();
 
-  // check for localStorage exist
-  if (!localStorage.getItem("rank") && !localStorage.getItem("rankTarget")) {
-    localStorage.setItem("rank", 1);
-    localStorage.setItem("totalPoints", 0);
-    localStorage.setItem("currentPoints", 0);
-    localStorage.setItem("perSecond", 0);
-    localStorage.setItem("rankTarget", 10);
-    localStorage.setItem("achievementRank", 0);
-    localStorage.setItem("achievementRankTarget", 100);
-  }
-
   // toggle achievement notification
   const toggleNotification = () => {
     counterStore.setNotificationOpen(true);
@@ -46,8 +35,12 @@ const App = observer(() => {
     }, 3000);
   };
 
-  // start interval when app starting
+  // start interval when app starting and check for localStorage exist
   useEffect(() => {
+    if (!localStorage.getItem("rank") && !localStorage.getItem("rankTarget")) {
+      counterStore.firstConfig();
+    }
+
     counterStore.startInterval();
   }, []); // eslint-disable-line
 

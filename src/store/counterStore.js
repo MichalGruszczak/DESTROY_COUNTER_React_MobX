@@ -184,6 +184,28 @@ class CounterStore {
     );
     this.startInterval();
   };
+
+  // first config
+  firstConfig = () => {
+    this.rank = 1;
+    this.totalPoints = 0;
+    this.currentPoints = 0;
+    this.perSecond = 0;
+    this.rankTarget = 10;
+    this.achievementRank = 0;
+    this.achievementRankTarget = 100;
+    clearInterval(this.interval);
+    localStorage.setItem("rank", Number(this.rank));
+    localStorage.setItem("totalPoints", Number(this.totalPoints));
+    localStorage.setItem("currentPoints", Number(this.currentPoints));
+    localStorage.setItem("perSecond", Number(this.perSecond));
+    localStorage.setItem("rankTarget", Number(this.rankTarget));
+    localStorage.setItem("achievementRank", Number(this.achievementRank));
+    localStorage.setItem(
+      "achievementRankTarget",
+      Number(this.achievementRankTarget)
+    );
+  };
 }
 
 // store context - with class instance
